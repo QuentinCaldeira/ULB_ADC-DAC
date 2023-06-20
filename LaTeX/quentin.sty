@@ -1,0 +1,253 @@
+%% Informations générales
+\NeedsTeXFormat{LaTeX2e}[1999/01/01]
+\ProvidesPackage{quentin}[2003/01/01]
+
+%% Chargement des extensions
+
+\RequirePackage{xcolor}
+\RequirePackage{lipsum}
+\RequirePackage{tikz}
+\usetikzlibrary{patterns}
+\RequirePackage[left=1.5cm,right=1.5cm,top=1.5cm,bottom=1.5cm]{geometry}
+\RequirePackage{multicol}
+\RequirePackage{framed}
+\RequirePackage{eso-pic}
+\RequirePackage{mwe}
+\RequirePackage{lastpage}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage[subfigure]{tocloft}
+\RequirePackage{subfigure}
+\RequirePackage{wrapfig}
+\RequirePackage[french]{babel}
+\RequirePackage{cellspace}  
+\RequirePackage{amsmath,amsfonts,amssymb}
+\RequirePackage{bitset,nicematrix}
+\RequirePackage{colortbl}
+\RequirePackage[skins]{tcolorbox}
+\tcbuselibrary{listings,theorems}
+\RequirePackage{amsmath}
+\RequirePackage{nicematrix}
+\usetikzlibrary{matrix}
+\RequirePackage{eso-pic}
+\RequirePackage[european, straightvoltages, RPvoltages]{circuitikz}
+\RequirePackage{tkzexample}
+\RequirePackage{bodegraph}
+\RequirePackage{capt-of}
+\RequirePackage{array,multirow,makecell}
+\RequirePackage{listings}
+\lstset{
+  aboveskip=3mm,
+  belowskip=-2mm,
+  backgroundcolor=\color{darkWhite},
+  basicstyle=\footnotesize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{red},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  framexleftmargin=16pt,
+  framextopmargin=3pt,
+  framexbottommargin=6pt,
+  frame=tb,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=C,
+  literate=
+  {²}{{\textsuperscript{2}}}1
+  {⁴}{{\textsuperscript{4}}}1
+  {⁶}{{\textsuperscript{6}}}1
+  {⁸}{{\textsuperscript{8}}}1
+  {€}{{\euro{}}}1
+  {é}{{\'e}}1
+  {è}{{\`{e}}}1
+  {ê}{{\^{e}}}1
+  {ë}{{\¨{e}}}1
+  {É}{{\'{E}}}1
+  {Ê}{{\^{E}}}1
+  {û}{{\^{u}}}1
+  {ù}{{\`{u}}}1
+  {â}{{\^{a}}}1
+  {à}{{\`{a}}}1
+  {á}{{\'{a}}}1
+  {ã}{{\~{a}}}1
+  {Á}{{\'{A}}}1
+  {Â}{{\^{A}}}1
+  {Ã}{{\~{A}}}1
+  {ç}{{\c{c}}}1
+  {Ç}{{\c{C}}}1
+  {õ}{{\~{o}}}1
+  {ó}{{\'{o}}}1
+  {ô}{{\^{o}}}1
+  {Õ}{{\~{O}}}1
+  {Ó}{{\'{O}}}1
+  {Ô}{{\^{O}}}1
+  {î}{{\^{i}}}1
+  {Î}{{\^{I}}}1
+  {í}{{\'{i}}}1
+  {Í}{{\~{Í}}}1,
+  morekeywords={*,uint8_t,...},
+  numbers=left,
+  numbersep=10pt,
+  numberstyle=\tiny\color{black},
+  rulecolor=\color{black},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{gray},
+  tabsize=4,
+  title=\lstname,
+}
+
+\newcommand{\titre}[1]{
+\begin{titlepage}%%%PAGE DE GARDE
+\textcolor{white}{\rule{\linewidth}{1cm}}
+\centering
+\textsc{\huge Universite Libre de Bruxelles}\\
+\bigbreak
+\textsc{\LARGE{Service SAAS}}
+\bigbreak
+\bigbreak
+
+\rule{\linewidth}{.5mm}
+#1
+\\[1cm]
+\today\\[2.5cm]
+
+%\includegraphics[scale=0.5]{150422015.png} 
+\includegraphics[scale=0.4]{SAAS.png} 
+\end{titlepage}
+}
+
+\newtcolorbox{definition}[1]{colback=mycolor!3,
+colframe=mycolor!30,fonttitle=\bfseries,
+title={#1}}
+
+\newtcolorbox{theorem}[1]{colback=mycolor!10,
+colframe=mycolor!80,fonttitle=\bfseries,
+title={#1}}
+
+\newtcolorbox{exo}[1]{colback=mycolor!6,
+colframe=mycolor!50,fonttitle=\bfseries,
+title={#1}}
+
+\newtcolorbox{appli}[1]{colback=mycolor!2,
+colframe=mycolor!20,fonttitle=\bfseries,
+title={#1}}
+
+\newtcolorbox{rmq}[1]{colback=mycolor!8,
+colframe=mycolor!60,fonttitle=\bfseries,
+title={#1}}
+
+\newtcolorbox{expr}[1]{colback=mycolor!15,
+colframe=mycolor!70,fonttitle=\bfseries,
+title={#1}}
+
+%% Déclaration des options
+\DeclareOption{}{}
+\DeclareOption*{...}
+\ProcessOptions
+
+%% Définition des commandes
+
+
+\makeatletter
+\newbox\exo@box \newbox\titre@box \newbox\label@inbox \newbox\label@outbox\newcount\exo@cnt
+\def\offset@box{2pt}
+\def\exercice#1#2{%
+	\begingroup
+	\medbreak\noindent
+	\fboxsep8pt \fboxrule0.6pt \global\advance\exo@cnt1 \edef\exo@box@sep{\the\fboxsep}%
+	\setbox\titre@box   \vbox{\offinterlineskip\hbox{\fboxsep7pt \kern0em \xdef\title@box@sep{\the\fboxsep}\fcolorbox{mycolor!35}{mycolor!15}{Exercice #1\space : #2}}\null}%
+	\setbox\exo@box\vtop\bgroup\hsize\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax\parindent0pt
+	}
+\def\endexercice{%
+	\egroup
+	\edef\ht@exo@strut{\the\dimexpr\ht\exo@box+\dp\titre@box+\offset@box\relax}%
+	\setbox\exo@box\hbox{\fcolorbox{mycolor!35}{mycolor!5}{\vrule width\z@ height\ht@exo@strut depth\z@\box\exo@box}}%
+	\rlap{\box\exo@box}%
+	\raise\dimexpr\ht@exo@strut+\exo@box@sep\relax\rlap{\box\titre@box}%
+	\medbreak
+	\endgroup\ignorespaces
+}
+\makeatother
+
+\titleformat % design des titres des chapitres
+{\chapter}
+[display]
+{\centering\normalfont\Large\scshape\bfseries}
+{\rule[1pt]{0.15\linewidth}{1pt}\quad\chaptertitlename~\thechapter\quad \rule[1pt] {0.15\linewidth}{1pt}}
+{-0.6\baselineskip}%espace vertical entre chapitre et nom du chapitre
+{\rule{\linewidth}{0.5pt}\break\Huge}
+[\vspace{-0.5\baselineskip}\rule{\linewidth}{0.5pt}\vspace{0\baselineskip}]
+
+\titlespacing*{\chapter}
+  {0pt}%  indent
+  {0cm}% space before
+  {0.6cm}% space after
+  
+\titleformat % design des titres des chapitres
+{\section}
+[display]
+{\normalfont\scshape\bfseries}
+{}
+{-0.6\baselineskip}%espace vertical entre chapitre et nom du chapitre
+{\begin{tikzpicture}[remember picture,overlay]
+\draw[draw=mycolor!60,fill=mycolor!60](0,-0.3) rectangle(1,0.7);*
+\draw(0.5,0.2)node[white]{\thesection};
+\draw[line width=0.9pt,draw=mycolor!60](0,-0.3)--(\textwidth,-0.3);
+\end{tikzpicture}
+\hspace{1.2cm}\Large}
+%[\vspace{-0.5\baselineskip}\color{dark_iut}\rule{\linewidth}{0.9pt}\vspace{0\baselineskip}]
+
+
+\titlespacing*{\section}
+  {0pt}%  indent
+  {0.2cm}% space before
+  {0.4cm}% space after
+  
+\titleformat % design des titres des chapitres
+{\subsection}
+[display]
+{\normalfont\scshape\bfseries}
+{}
+{-0\baselineskip}%espace vertical entre chapitre et nom du chapitre
+{\begin{tikzpicture}[remember picture,overlay]
+\draw[draw=mycolor!45,fill=mycolor!45](1,-0.3) rectangle(1.8,0.5);
+\draw(1.4,0.1)node[white]{\footnotesize\thesubsection};
+\draw[line width=0.9pt,draw=mycolor!45](1,-0.3)--(\textwidth,-0.3);
+\end{tikzpicture}
+\hspace{2.1cm}\large}
+%[\vspace{-0.35\baselineskip} \hspace{0.895cm} \color{dark_bm}\rule{.945\linewidth}{0.9pt}\vspace{0\baselineskip}]
+
+
+\titlespacing*{\subsection}
+  {0pt}%  indent
+  {0.15cm}% space before
+  {0.5cm}% space after
+
+\newcommand\entete{
+\pagestyle{empty}
+\thispagestyle{empty}
+\AddToShipoutPicture{
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+\draw[draw=mycolor!60,fill=mycolor!50](current page.north west)rectangle([yshift=-\paperheight/32]current page.north east);
+\draw[draw=mycolor!60,line width=1.5mm]([yshift=-\paperheight/32]current page.north west)--([yshift=-\paperheight/32]current page.north east);
+
+\draw[draw=mycolor!60,fill=mycolor!50](current page.south west)rectangle([yshift=\paperheight/24]current page.south east);
+\draw[draw=mycolor!60,line width=1.5mm]([yshift=\paperheight/24]current page.south west)--([yshift=\paperheight/24]current page.south east);
+
+\draw([yshift=-\paperheight/288, xshift=\paperwidth/24]current page.north west)node[below right,color=white]{\leftmark};
+
+\draw([xshift=\paperwidth/2, yshift=\paperheight/48]current page.south west)node[color=white]{\large Page \thepage/\pageref{LastPage}};
+\draw([xshift=-55,yshift=\paperheight/26]current page.south east)node[below right]{\includegraphics[scale=.07]{SAAS.png}  };
+\end{tikzpicture}
+}
+}
+
+%% Fin du package
+\endinput

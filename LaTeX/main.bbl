@@ -1,0 +1,210 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{digikey}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=05d8052a88d86e05f99e0dee84c37450}{%
+           family={CubedSolution},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Digikey}%
+      }
+      \strng{namehash}{05d8052a88d86e05f99e0dee84c37450}
+      \strng{fullhash}{05d8052a88d86e05f99e0dee84c37450}
+      \strng{bibnamehash}{05d8052a88d86e05f99e0dee84c37450}
+      \strng{authorbibnamehash}{05d8052a88d86e05f99e0dee84c37450}
+      \strng{authornamehash}{05d8052a88d86e05f99e0dee84c37450}
+      \strng{authorfullhash}{05d8052a88d86e05f99e0dee84c37450}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Website}
+      \field{title}{Protecting Input in Digital Electronics}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://www.digikey.be/en/articles/protecting-inputs-in-digital-electronics
+      \endverb
+      \verb{url}
+      \verb https://www.digikey.be/en/articles/protecting-inputs-in-digital-electronics
+      \endverb
+    \endentry
+    \entry{FilipovaPetrakieva2020}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e5bd617e04b8390ff661677596baa796}{%
+           family={Filipova-Petrakieva},
+           familyi={F\bibinithyphendelim P\bibinitperiod},
+           given={S.\bibnamedelimi K.},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=dbe3061d3fba1887d74f7251d1d9823b}{%
+           family={Shopov},
+           familyi={S\bibinitperiod},
+           given={Y.\bibnamedelimi M.},
+           giveni={Y\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Engineering, Technology {\&} Applied Science Research}%
+      }
+      \strng{namehash}{04bd555fffc116364b2955355b219fce}
+      \strng{fullhash}{04bd555fffc116364b2955355b219fce}
+      \strng{bibnamehash}{04bd555fffc116364b2955355b219fce}
+      \strng{authorbibnamehash}{04bd555fffc116364b2955355b219fce}
+      \strng{authornamehash}{04bd555fffc116364b2955355b219fce}
+      \strng{authorfullhash}{04bd555fffc116364b2955355b219fce}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Engineering, Technology {\&} Applied Science Research}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Electrical Device Protection from Overvoltage in a {DC} Power Supply Network: Fast-acting Protection, Realized by an {“}Artificial{”} Short Circuit in the Input of the Protected Device}
+      \field{volume}{10}
+      \field{year}{2020}
+      \field{pages}{5314\bibrangedash 5319}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.48084/etasr.3316
+      \endverb
+    \endentry
+    \entry{Gabriel2012}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=10cdc7aa118bdbdd1c5d5234013d1b30}{%
+           family={Gabriel},
+           familyi={G\bibinitperiod},
+           given={Cormier},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{10cdc7aa118bdbdd1c5d5234013d1b30}
+      \strng{fullhash}{10cdc7aa118bdbdd1c5d5234013d1b30}
+      \strng{bibnamehash}{10cdc7aa118bdbdd1c5d5234013d1b30}
+      \strng{authorbibnamehash}{10cdc7aa118bdbdd1c5d5234013d1b30}
+      \strng{authornamehash}{10cdc7aa118bdbdd1c5d5234013d1b30}
+      \strng{authorfullhash}{10cdc7aa118bdbdd1c5d5234013d1b30}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Website}
+      \field{title}{Chapitre 3 : Adaptation d'impédances}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://www.yumpu.com/fr/document/read/16919487/gele5223-chapitre-4-universite-de-moncton
+      \endverb
+      \verb{url}
+      \verb https://www.yumpu.com/fr/document/read/16919487/gele5223-chapitre-4-universite-de-moncton
+      \endverb
+    \endentry
+    \entry{appnoteti}{report}{}
+      \name{author}{1}{}{%
+        {{hash=ad15b13a404a5445e5995382a3760da0}{%
+           family={Kulavik},
+           familyi={K\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Texas Instruments}%
+      }
+      \strng{namehash}{ad15b13a404a5445e5995382a3760da0}
+      \strng{fullhash}{ad15b13a404a5445e5995382a3760da0}
+      \strng{bibnamehash}{ad15b13a404a5445e5995382a3760da0}
+      \strng{authorbibnamehash}{ad15b13a404a5445e5995382a3760da0}
+      \strng{authornamehash}{ad15b13a404a5445e5995382a3760da0}
+      \strng{authorfullhash}{ad15b13a404a5445e5995382a3760da0}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An easy solution to current limiting an OP Amp}
+      \field{type}{techreport}
+      \field{year}{2000}
+      \verb{urlraw}
+      \verb https://www.ti.com/lit/pdf/sbva011
+      \endverb
+      \verb{url}
+      \verb https://www.ti.com/lit/pdf/sbva011
+      \endverb
+    \endentry
+    \entry{Rousseau}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=aa9c913cb991c0d4c3a32bb678547bab}{%
+           family={Rousseau},
+           familyi={R\bibinitperiod},
+           given={Jean-Jacques},
+           giveni={J\bibinithyphendelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa9c913cb991c0d4c3a32bb678547bab}
+      \strng{fullhash}{aa9c913cb991c0d4c3a32bb678547bab}
+      \strng{bibnamehash}{aa9c913cb991c0d4c3a32bb678547bab}
+      \strng{authorbibnamehash}{aa9c913cb991c0d4c3a32bb678547bab}
+      \strng{authornamehash}{aa9c913cb991c0d4c3a32bb678547bab}
+      \strng{authorfullhash}{aa9c913cb991c0d4c3a32bb678547bab}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Website}
+      \field{title}{Circuits écrêteurs à diodes}
+      \verb{urlraw}
+      \verb http://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/electro/ecreteur.html
+      \endverb
+      \verb{url}
+      \verb http://ressources.univ-lemans.fr/AccesLibre/UM/Pedago/physique/02/electro/ecreteur.html
+      \endverb
+    \endentry
+    \entry{LT4363AD}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=88183b946cc5f0e8c96b2e66e1c74a7e}{%
+           family={Unknown},
+           familyi={U\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {1630 McCarthy Blvd., Milpitas, CA 95035-7417}%
+      }
+      \list{organization}{1}{%
+        {Analog Devices}%
+      }
+      \strng{namehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{fullhash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{bibnamehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{authorbibnamehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{authornamehash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \strng{authorfullhash}{88183b946cc5f0e8c96b2e66e1c74a7e}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Rev.B}
+      \field{title}{LT4363, High Voltage Surge Stopper with Current Limit}
+      \verb{urlraw}
+      \verb https://www.analog.com/media/en/technical-documentation/data-sheets/4363fb.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.analog.com/media/en/technical-documentation/data-sheets/4363fb.pdf
+      \endverb
+    \endentry
+  \enddatalist
+  \missing{JLC2KICAD}
+\endrefsection
+\endinput
+
