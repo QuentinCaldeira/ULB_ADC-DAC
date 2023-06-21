@@ -55,7 +55,7 @@
     (aux_axis_origin 45.11 150)
     (grid_origin 45.11 150)
     (pcbplotparams
-      (layerselection 0x0001030_ffffffff)
+      (layerselection 0x00010ff_ffffffff)
       (plot_on_all_layers_selection 0x0000000_00000000)
       (disableapertmacros false)
       (usegerberextensions false)
@@ -5839,6 +5839,75 @@
   )
   (gr_text "E1" (at 111.15 125.87) (layer "F.SilkS") (tstamp f6a5abcc-e504-4c47-8888-49367258acb6)
     (effects (font (size 1.5 1.5) (thickness 0.3) bold) (justify left bottom))
+  )
+  (gr_text "Connecteurs de bord de cartes: " (at 220.86 107.25) (layer "F.Fab") (tstamp 065836f0-8e62-4d05-81a9-028b89ce5225)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Contour du PCB Métallisé: " (at 296.90285 103.75) (layer "F.Fab") (tstamp 30b826dc-bf58-416c-95de-7345cc871e9c)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "1,6000 mm" (at 329.817136 89.75) (layer "F.Fab") (tstamp 3d5839b9-cf7e-4ad4-abba-63fcfb9017fb)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "CARACTÉRISTIQUES du PCB" (at 220.11 85) (layer "F.Fab") (tstamp 5c1bd990-37f5-4f77-86be-3df9ec751aed)
+    (effects (font (size 2 2) (thickness 0.4)) (justify left top))
+  )
+  (gr_text "Piste / espacement min: " (at 220.86 96.75) (layer "F.Fab") (tstamp 66258330-3b61-4068-be80-ce00c8263d2e)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "200,0000 mm x 100,0000 mm" (at 259.98857 93.25) (layer "F.Fab") (tstamp 68f89ee3-9721-4638-ac8f-05ad7bf902e5)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Non" (at 259.98857 103.75) (layer "F.Fab") (tstamp 6b50040a-0d6c-4c4d-aedb-1804c4567f91)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "" (at 296.90285 93.25) (layer "F.Fab") (tstamp 6f7daece-3ee5-48dc-a176-6035fb44200d)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "0,3000 mm" (at 329.817136 96.75) (layer "F.Fab") (tstamp 80fab957-48ab-453f-9e84-38a17ad1f71d)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Finition Cuivre: " (at 220.86 100.25) (layer "F.Fab") (tstamp 8a59cc17-4db7-4cc4-a917-20a34a39b3c3)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Diamètre de trou min: " (at 296.90285 96.75) (layer "F.Fab") (tstamp a2e96bfe-61d9-49e2-b790-6429a30ba435)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Contrôle d'Impédance: " (at 296.90285 100.25) (layer "F.Fab") (tstamp adb2a24f-4ef6-403e-b0f2-0e11c75080a5)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "" (at 329.817136 93.25) (layer "F.Fab") (tstamp c263ae25-08a3-4ef5-9c8d-0a83914f3bac)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "2" (at 259.98857 89.75) (layer "F.Fab") (tstamp d2026d35-a1aa-4883-892c-e8ba86b3167f)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "None" (at 259.98857 100.25) (layer "F.Fab") (tstamp d5520e3f-1074-447d-ad83-f29a79f16c83)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Nombre de Couches Cuivre: " (at 220.86 89.75) (layer "F.Fab") (tstamp dc7a574a-ce1b-45fb-ad9f-c88780204070)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Dimensions hors tout PCB: " (at 220.86 93.25) (layer "F.Fab") (tstamp e247f46f-698e-4dbf-902c-103a9cce5579)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Epaisseur du PCB: " (at 296.90285 89.75) (layer "F.Fab") (tstamp e4b364e1-d83f-4b8c-ad42-025114e49735)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Non" (at 329.817136 100.25) (layer "F.Fab") (tstamp f43ebac0-6004-4c64-801e-6d248c06278b)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Non" (at 259.98857 107.25) (layer "F.Fab") (tstamp f6170086-11e7-4df8-90cf-e603bd52836f)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Non" (at 329.817136 103.75) (layer "F.Fab") (tstamp f8143285-7ec8-4180-9ef3-28953f97a64e)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "Pads castellated: " (at 220.86 103.75) (layer "F.Fab") (tstamp fe0e308e-9a80-4527-8d06-1cb3569d59da)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
+  )
+  (gr_text "0,0000 mm / 0,0000 mm" (at 259.98857 96.75) (layer "F.Fab") (tstamp ff9a7679-b218-4d24-a30f-12cb9fbc8865)
+    (effects (font (size 1.5 1.5) (thickness 0.2)) (justify left top))
   )
   (dimension (type aligned) (layer "Eco1.User") (tstamp 6eb69903-e069-4e9a-b18b-77eeed1d6f96)
     (pts (xy 40 50) (xy 40 150))
@@ -19124,6 +19193,33 @@
         (xy 45.2345 50.0005)
         (xy 244.9855 50.0005)
       )
+    )
+  )
+  (group "group-boardCharacteristics" (id 961981ea-c620-4bb5-9339-772f82f2fa9e)
+    (members
+      065836f0-8e62-4d05-81a9-028b89ce5225
+      30b826dc-bf58-416c-95de-7345cc871e9c
+      3d5839b9-cf7e-4ad4-abba-63fcfb9017fb
+      5c1bd990-37f5-4f77-86be-3df9ec751aed
+      66258330-3b61-4068-be80-ce00c8263d2e
+      68f89ee3-9721-4638-ac8f-05ad7bf902e5
+      6b50040a-0d6c-4c4d-aedb-1804c4567f91
+      6f7daece-3ee5-48dc-a176-6035fb44200d
+      80fab957-48ab-453f-9e84-38a17ad1f71d
+      8a59cc17-4db7-4cc4-a917-20a34a39b3c3
+      a2e96bfe-61d9-49e2-b790-6429a30ba435
+      adb2a24f-4ef6-403e-b0f2-0e11c75080a5
+      c263ae25-08a3-4ef5-9c8d-0a83914f3bac
+      d2026d35-a1aa-4883-892c-e8ba86b3167f
+      d5520e3f-1074-447d-ad83-f29a79f16c83
+      dc7a574a-ce1b-45fb-ad9f-c88780204070
+      e247f46f-698e-4dbf-902c-103a9cce5579
+      e4b364e1-d83f-4b8c-ad42-025114e49735
+      f43ebac0-6004-4c64-801e-6d248c06278b
+      f6170086-11e7-4df8-90cf-e603bd52836f
+      f8143285-7ec8-4180-9ef3-28953f97a64e
+      fe0e308e-9a80-4527-8d06-1cb3569d59da
+      ff9a7679-b218-4d24-a30f-12cb9fbc8865
     )
   )
 )
