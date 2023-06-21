@@ -267,7 +267,7 @@ Les sorties seront manipulées par les élèves. Il faut que ces sorties soient 
 \end{itemize}
 
 \chapter{Etudes des nouvelles protections}
-
+\thispagestyle{empty}
 \section{Protection des entrées}
 \subsection{Veille technologique}
 Dans un premier temps, il est intéressant de se renseigner sur différentes méthodes de protection des entrées. On souhaite principalement se protéger d'une tension d'entrée qui sera trop grande. Une solution simple serait de mettre des diodes Zener en tête-bêche, comme l'illustre parfaitement ce site de l'Université du Mans \cite{Rousseau}. On peut, en choisissant la tension de claquage de la diode, écrêté la tension positive et négative. Cette solution à tout de même une limite. Une résistance est placée en amont pour limiter le courant circulant dans les diodes. Si ce courant devient trop fort, la puissance que la diode devra dissiper deviendra trop élevée et elle sera détruite. Il faut donc correctement dimensionner les diodes et la résistance, en fonction de la tension maximale qu'on risque d'avoir en entrée.
@@ -328,7 +328,7 @@ Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sorties_n
 \draw (0,0) node[op amp,scale=1] (opamp) {};
 %\draw (opamp.-) --++ (-.5,0)node(b){}--++(0,1)node(a){}--++(5,0)--++(0,-1.49)node(c){}to [R,l=2 k$\Omega$]++(-2,0) to (opamp.out);%%CR-
 
-\draw (opamp.-) --++ (-.5,0)node(b){}--++(0,1)node(a){}to[crossing]++(3.215,0)--++(1.785,0)--++(0,-1.49)node(c){}to [R,l=2 k$\Omega$]++(-2,0) to (opamp.out);%%CR-
+\draw (opamp.-) --++ (-.5,0)node(b){}--++(0,1)node(a){}to[crossing]++(3.215,0)--++(1.785,0)--++(0,-1.49)node(c){}to [R,l=1 k$\Omega$]++(-2,0) to (opamp.out);%%CR-
 \draw (opamp.+)--++(-2,0)node[left]{Carte d'acquisition};
 
 
@@ -337,10 +337,10 @@ Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sorties_n
 %\draw (opamp.up) --++ (0,.2) node[above] {15 V};
 \draw (opamp.up) --++ (0,2) node(anch+){};
 \draw(anch+.center)to[C,l=0.1 uF]++(2,0)node[ground]{};
-\draw(anch+.center)--++(0,1)node(bul){$\bullet$}--++(-2,0)to[Zener diode, l=15 V]++(0,2)--++(2,0)to[R,l=2 k$\Omega$]++(0,-2)--++(2,0)to[C,l_=10 nF]++(0,2)--++(-2,0)--++(0,.2)node[above]{15 V};
+\draw(anch+.center)--++(0,1)node(bul){$\bullet$}--++(-2,0)to[Zener diode, l=15 V, invert]++(0,2)--++(2,0)to[R,l=2 k$\Omega$]++(0,-2)--++(2,0)to[C,l_=10 nF]++(0,2)--++(-2,0)--++(0,.2)node[above]{15 V};
 \draw (opamp.down) --++ (0,-1) node(anch-){};
 \draw(anch-.center)to[C,l=0.1 uF]++(-2,0)node[ground]{};
-\draw(anch-.center)--++(0,-1)node(bul){$\bullet$}--++(-2,0)to[Zener diode, l_=15 V,invert]++(0,-2)--++(2,0)to[R,l_=2 k$\Omega$]++(0,2)--++(2,0)to[C,l=10 nF]++(0,-2)--++(-2,0)--++(0,-.2)node[below]{-15 V};
+\draw(anch-.center)--++(0,-1)node(bul){$\bullet$}--++(-2,0)to[Zener diode, l_=15 V]++(0,-2)--++(2,0)to[R,l_=2 k$\Omega$]++(0,2)--++(2,0)to[C,l=10 nF]++(0,-2)--++(-2,0)--++(0,-.2)node[below]{-15 V};
 \end{circuitikz}
 \shorthandoff{;:!?}
 \caption{Schéma de principe de protection des sorties sur la nouvelle carte}
@@ -349,7 +349,7 @@ Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sorties_n
 
 
 \section{Alimentation du circuit}
-Pour alimenter le montage, l'alimentation principale sera celle des racks, c'es-à-dire $\pm$24\~V. Les amplificateurs seront eux alimentés en $\pm$15\~V, à l'aide de deux régulateurs de tensions : le 7815CV et le 7915CV. Le montage sera équivalent à celui de la précédente carte, comme le montre la \bsc{Figure} \ref{fig:alim_new}.
+Pour alimenter le montage, l'alimentation principale sera celle des racks, c'es-à-dire $\pm$24\~V. Les amplificateurs seront eux alimentés en $\pm$15\~V, à l'aide de deux régulateurs de tensions : le 7815CV et le 7915CV. Le montage sera équivalent à celui de la précédente carte, comme le montre la \bsc{Figure} \ref{fig:alim_new}. Les diodes sont des 1N4001.
 
 \begin{figure}[!h]
 \centering
@@ -391,6 +391,8 @@ external pins width=0](C){7915CV};
 \end{figure}
 
 \chapter{Intégration des protections dans le calculateur}
+\thispagestyle{empty}
+\section{Connecteur fond de panier}
 Pour les entrées/sorties analogiques, les anciennes et nouvelles cartes d'acquisition n'ont pas changé de disposition des pins. De ce fait, la disposition faite sur la précédente carte de protection pourra être conservée sans avoir à refaire le câble liant le fond de panier à la carte d'acquisition. Les branchements au connecteur fond de panier se feront tel que sur la \bsc{Figure} \ref{fig:64_new}. 
 
 \begin{figure}[h!]
@@ -404,8 +406,8 @@ Pour les entrées/sorties analogiques, les anciennes et nouvelles cartes d'acqui
 Il est important de ramener les pins non-connectés à la masse, car par défaut la carte fonctionne en mode différentiel. Elle fait donc la différence entre les pins A0 et A8, A1 et A9, etc... Les pattes A8, A9, 10, [...], A15 sont sur les pins non connectés. Le potentiel est donc flottant et la mesure différentielle n'est pas bonne. Il faut donc soit connecté ces pins à la masse, soit faire fonctionner la carte d'acquisition en \textbf{single-ended}, ou encore les deux solutions en même temps. Pour notre part, les pins seront connectés à la masse.
 
 \section{La face avant}
-Pour concevoir la nouvelle face avant, on utilise des fiches bananes avec des couleurs différentes en fonction d'une entrée, d'une sortie ou d'une masse. Etant donné que le nombre d'entrées/sorties est moindre, il est intéressant de prendre plus de place sur la face avant afin de mettre des indications visibles et lisibles pour les étudiants. Par ailleurs, sur une face avant, nous pouvons disposer au maximum 7 fiches en longueur et 5 fiches en largeur. Nous n'utiliserons que 4 fiches maximum en largeur, pour que la fixation du PCB à la face avant se fasse de manière plus simple. En temps normal, il faut impérativement que le PCB passe entre deux fiches de la face avant, ce qui est contraignant. Ces quatre idées, visibles sur la \bsc{Figure} \ref{fig:design_face_avant} ont étés proposées aux utilisateurs des calculateurs analogiques.
-
+Pour concevoir la nouvelle face avant, on utilise des fiches bananes avec des couleurs différentes en fonction d'une entrée, d'une sortie ou d'une masse. Etant donné que le nombre d'entrées/sorties est moindre, il est intéressant de prendre plus de place sur la face avant afin de mettre des indications visibles et lisibles pour les étudiants. Par ailleurs, sur une face avant, nous pouvons disposer au maximum 8 fiches en longueur et 5 fiches en largeur. Nous n'utiliserons que 4 fiches maximum en largeur, pour que la fixation du PCB à la face avant se fasse de manière plus simple. En temps normal, il faut impérativement que le PCB passe entre deux fiches de la face avant, ce qui est contraignant. Ces quatre idées, visibles sur la \bsc{Figure} \ref{fig:design_face_avant} ont étés proposées aux utilisateurs des calculateurs analogiques.
+\newpage
 \begin{figure}[!h]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{IMAGES/design sans dot.png} 
@@ -424,13 +426,15 @@ La face avant qui a été retenue est la deuxième, avec un texte plutôt centr�
 La gravure a été effectuée sur le côté non protégé des plaques d'aluminium. Il faut bien veiller à placer son dessin en haut à gauche de la feuille sur Inkscape, pour effectuer la gravure. En effet, il y a une équerre dans les graveuses qui permet de positionner la plaque d'aluminium.
 
 \chapter{Design du PCB}
+\thispagestyle{empty}
 \section{Design}
 Pour faire le PCB, le logiciel KiCAD à été utilisé. Le PCB à ensuite été fabriqué par JLCPCB. Les fichiers de conceptions, la liste des composants, ainsi que des copies \verb+pdf+ et \verb+png+ sont disponibles dans le répertoire \verb+PCB+. Un emplacement à été laisser libre pour les condensateurs de filtrage sur le circuit de protection des entrées. De ce fait, une capacité pourra être rajoutée a besoin. Un emplacement pour une résistance additionnelle a été placée en parallèle des résistance de protection des sorties, afin de faire varier sa valeur au besoin. La résistance actuelle à été dimensionnée pour les procédés actuellement utilisés. Si jamais une chute de tension est observé sur de nouveaux procédés, il faudra faire chuter la valeur de cette résistance. Il faut tout de même veiller à ce que les mesures en court-circuit avec cette résistance soit dans une gamme de valeurs non destructive pour la carte, c'est-à-dire inférieur à 35 mA. Des vias ont étés ajoutés pour venir y souder les fils qui relieront la carte à la face avant. Les deux faces sont utilisés, notamment à cause de l'alimentation de la carte qui bloque l'accès à certaines entrées. Un plan de masse à été fait sur la face du dessous pour faciliter le routage.
 
 \section{Problèmes rencontrés}
 
 Un problème rencontré lorsqu'on passe commande auprès de JLCPCB avec un PCB fait sur KiCAD est qu'après lui avoir donner le fichier de placement des composants, les composants sont mal placés sur le PCB. Cela est dû à un problème de normes entre KiCAD et JLCPCB sur certaines empreintes. Une première solution est d'utiliser le logiciel EasyEDA qui fonctionne de paire avec JLCPCB. Une autre solution, qui a été utilisée ici, est un plugin Python du nom de JLC2KiCad. Ce plugin permet de générer des empreintes, symboles et modèles 3D à partir du numéro de référence JLCPCB. Une fiche explicative est disponible dans le répertoire \verb+Tuto+. Avec cette méthode, toutes les empreintes correspondront parfaitement aux composant souhaités.
-
+\thispagestyle{empty}
 \printbibliography
+\thispagestyle{empty}
 
 \end{document}

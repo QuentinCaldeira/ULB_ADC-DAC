@@ -63,7 +63,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {5}Intégration des protections dans le calculateur}{13}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}La face avant}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.1}Connecteur fond de panier}{13}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}La face avant}{13}{section.5.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {6}Design du PCB}{15}{chapter.6}%
 \defcounter {refsection}{0}\relax 
