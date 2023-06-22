@@ -67,7 +67,7 @@ Je recommande aussi de cocher la case **Confirm Part Placement** dans la partie 
 
 On ajoute ensuite le fichier BOM et le CPL. Une fenêtre apparaît ensuite avec la liste des composants selectionnés pour les différentes références. Si jamais le site est en manque de stock sur une référence, il faut chercher une alternative dans leur librairie de composant.
 
-On arrive enfin sur la partie placement des composants. Il y a de gros problèmes de compatibilité entre le placement des composants par KiCAD et JLCPCB. De ce fait, il peut arriver que les composants ne soient pas placés aux endroits prévus. Si c'est le cas, vous pouvez tous les replacer à la maison directement sur leur site, sinon voir le tutoriel JLC2KICAD pour mettre à jour vos empreintes.
+On arrive enfin sur la partie placement des composants. Il y a de gros problèmes de compatibilité entre le placement des composants par KiCAD et JLCPCB. De ce fait, il peut arriver que les composants ne soient pas placés aux endroits prévus. Si c'est le cas, vous pouvez tous les replacer à la main directement sur leur site, sinon voir le tutoriel JLC2KICAD pour mettre à jour vos empreintes.
 
 Une fois que le placement des composants correspond à ce que vous vouliez, vous pouvez confirmer la commande.
 
@@ -141,6 +141,6 @@ I also recommend checking the **Confirm Part Placement** box in the **PCB Assemb
 
 We then add the BOM file and the CPL. A window then appears with the list of components selected for the different references. If the site is ever out of stock on a part number, you need to look for an alternative in their component library.
 
-Finally, we come to the component placement section. There are major compatibility problems between the placement of components by KiCAD and JLCPCB. As a result, components may not be placed where they should be. If this is the case, you can replace them all at home directly on their site, otherwise see the JLC2KICAD tutorial to update your footprints.
+Finally, we come to the component placement section. There are major compatibility problems between the placement of components by KiCAD and JLCPCB. As a result, components may not be placed where they should be. If this is the case, you can replace them all by hand directly on their site, otherwise see the JLC2KICAD tutorial to update your footprints.
 
 Once the placement of the components matches what you wanted, you can confirm the order.
