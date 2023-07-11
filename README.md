@@ -22,3 +22,7 @@ Ce répertoire contient tout les fichiers liés à la compilation LaTeX du fichi
 ## Tuto
 
 Ce répertoire contient des tutoriels écrits en `markdown`. Ces tutoriels ont été écrits lorsque j'ai rencontré des difficultés à faire une tâche.
+
+## 3D
+
+Ce répertoire contient les fichiers 3D FreeCAD et `.stl` pour imprimer les pièces permettant de visser la face avant au PCB.

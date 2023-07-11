@@ -56,7 +56,7 @@ Une première carte a été réalisée en 1993. Cette carte est fonctionnelle, m
 
 \chapter{Présentation de l'existant}
 \thispagestyle{empty}
-Cette partie détaillera les cartes précédemment installées dans le calculateur. La carte dispose de 20 entrées et 12 sorties. Il semblerait qu'elle ait été conçue ainsi afin d'utiliser toutes les broches inférieures du connecteur fond de panier. Le connecteur utilisé est un DIN 41612 de 64 broches. Il s'avère qu'au quotidien, seulement 8 entrées et 2 sorties sont utilisées au maximum. La carte mesure 10 cm de largeur et 20 cm de longueur. C'est une taille standard que toutes les cartes insérées dans les racks doivent respecter. Les connecteurs utilisés sur la face avant sont des connecteurs banane, de couleur différente en fonction d'une entrée, d'une sortie ou d'une masse. Il n'y a pas de détrompeur entre les 3 connectiques.
+Cette partie détaillera les cartes précédemment installées dans le calculateur. La carte dispose de 20 entrées et 12 sorties. Il semblerait qu'elle ait été conçue ainsi afin d'utiliser toutes les broches inférieures du connecteur fond de panier. Le connecteur utilisé est un DIN 41612 de 64 broches. Il s'avère qu'au quotidien, seulement 8 entrées et 2 sorties sont utilisées au maximum. La carte mesure 10 cm de largeur et 22 cm de longueur. C'est une taille standard que toutes les cartes insérées dans les racks doivent respecter. Les connecteurs utilisés sur la face avant sont des connecteurs banane, de couleur différente en fonction d'une entrée, d'une sortie ou d'une masse. Il n'y a pas de détrompeur entre les 3 connectiques.
 
 \section{Les cartes d'acquisition}
 Les cartes d'acquisition précédemment utilisées étaient des NI PCI 6014 et NI PCI 6024E. Ces cartes sont au format PCI. Les spécifications de cette carte sont synthétisées dans le tableau ci-dessous.
@@ -239,7 +239,7 @@ Le laboratoire souhaite aussi ajouter deux entrées d'encodeur par carte, afin d
 
 \section{Cahier des charges}
 \subsection{Dimensions}
-La carte devra être aux dimensions du rack de laboratoire, c'est à dire 20 cm de longueur pour 10 cm de largeur. 
+La carte devra être aux dimensions du rack de laboratoire, c'est à dire 22 cm de longueur pour 10 cm de largeur maximum.
 
 \subsection{Protection des entrées analogiques}
 Les entrées seront manipulées par les élèves. Il faut que ces entrées soient :
@@ -432,7 +432,54 @@ Pour faire le PCB, le logiciel KiCAD à été utilisé. Le PCB à ensuite été 
 
 \section{Problèmes rencontrés}
 
-Un problème rencontré lorsqu'on passe commande auprès de JLCPCB avec un PCB fait sur KiCAD est qu'après lui avoir donner le fichier de placement des composants, les composants sont mal placés sur le PCB. Cela est dû à un problème de normes entre KiCAD et JLCPCB sur certaines empreintes. Une première solution est d'utiliser le logiciel EasyEDA qui fonctionne de paire avec JLCPCB. Une autre solution, qui a été utilisée ici, est un plugin Python du nom de JLC2KiCad. Ce plugin permet de générer des empreintes, symboles et modèles 3D à partir du numéro de référence JLCPCB. Une fiche explicative est disponible dans le répertoire \verb+Tuto+. Avec cette méthode, toutes les empreintes correspondront parfaitement aux composant souhaités.
+Un problème rencontré lorsqu'on passe commande auprès de JLCPCB avec un PCB fait sur KiCAD est qu'après lui avoir donner le fichier de placement des composants, les composants sont mal placés sur le PCB. Cela est dû à un problème de normes entre KiCAD et JLCPCB sur certaines empreintes. Une première solution est d'utiliser le logiciel EasyEDA qui fonctionne de paire avec JLCPCB. Une autre solution, qui a été utilisée ici, est un plugin Python du nom de JLC2KiCad. Ce plugin permet de générer des empreintes, symboles et modèles 3D à partir du numéro de référence JLCPCB. Une fiche explicative est disponible dans le répertoire \verb+Tuto+. Avec cette méthode, toutes les empreintes correspondront parfaitement aux composant souhaités.\\
+
+La carte n'a pas été fabriquée aux bonnes dimensions (20 cm par 10 cm au lieu de 22 cm par 10 cm). De ce fait, des extensions plastiques faites à l'imprimante 3d ont été crées afin que la carte rentre parfaitement dans les racks. Les fichiers de conception 3d sont disponibles sur GitHub. La pièce à été conçue sur FreeCAD, un logiciel  open-source.\\
+
+Le dernier soucis rencontré est l'implémentation des vias sur la carte. Des vias ont étés placés pour venir y souder des fils reliant la face avant à la carte. Le problème est que le fabricant ne met pas de pastille de cuivre autour si on met un via sur KiCAD. Les câbles ont donc étés soudés à l'intérieur du via, mais l'opération  est plus compliquée. La connexion se fait tout de même sans problèmes.
+
+\chapter{Caractérisation de la carte}
+\thispagestyle{empty}
+Les cartes ont étés caractérisées en fréquence et en phase, et les courants en court-circuits ont étés relevés.
+\section{Caractérisation des entrées}
+Pour caractériser les entrées, un signal sinusoïdal d'amplitude $\pm$5 V à été injecté, et la sortie mesurée à l'oscilloscope.  La réponse en amplitude est visible \bsc{Figure} \ref{fig:ampin} et celle en phase \bsc{Figure} \ref{fig:phiin}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.7]{IMAGES/amp_in.png} 
+\end{center}
+\caption{Diagramme de Bode en amplitude des entrées}
+\label{fig:ampin}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.7]{IMAGES/phi_in.png} 
+\end{center}
+\caption{Diagramme de Bode en phase des entrées}
+\label{fig:phiin}
+\end{figure}
+
+
+\section{Caractérisation des sorties}
+Pour caractériser les sorties, un signal sinusoïdal d'amplitude $\pm$5 V à été injecté, et la sortie mesurée à l'oscilloscope.  La réponse en amplitude est visible \bsc{Figure} \ref{fig:ampout} et celle en phase \bsc{Figure} \ref{fig:phiout}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.7]{IMAGES/amp_out.png} 
+\end{center}
+\caption{Diagramme de Bode en amplitude des sorties}
+\label{fig:ampout}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[scale=0.7]{IMAGES/phi_out.png} 
+\end{center}
+\caption{Diagramme de Bode en phase des sorties}
+\label{fig:phiout}
+\end{figure}
+
 \thispagestyle{empty}
 \printbibliography
 \thispagestyle{empty}

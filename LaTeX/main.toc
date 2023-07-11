@@ -72,3 +72,9 @@
 \contentsline {section}{\numberline {6.1}Design}{15}{section.6.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.2}Problèmes rencontrés}{15}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}Caractérisation de la carte}{16}{chapter.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Caractérisation des entrées}{16}{section.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Caractérisation des sorties}{16}{section.7.2}%

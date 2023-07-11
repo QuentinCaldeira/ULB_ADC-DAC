@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.14.0 (MiKTeX 22.1) (format=lualatex 2022.2.7)  21 JUN 2023 10:47
+This is LuaHBTeX, Version 1.14.0 (MiKTeX 22.1) (format=lualatex 2022.2.7)  11 JUL 2023 10:42
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -2045,7 +2045,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 36--36
  [][][][] 
  []
 
-<SAAS.png, id=150, 502.0356pt x 251.0178pt>
+<SAAS.png, id=162, 502.0356pt x 251.0178pt>
 File: SAAS.png Graphic file (type png)
 <use SAAS.png>
 Package luatex.def Info: SAAS.png  used on input line 36.
@@ -2147,7 +2147,7 @@ Package luatex.def Info: SAAS.png  used on input line 150.
  [5
 Missing character: There is no * (U+002A) in font nullfont!
 ]
-<IMAGES/fond_de_panierancien.png, id=274, 807.7678pt x 185.19188pt>
+<IMAGES/fond_de_panierancien.png, id=297, 807.7678pt x 185.19188pt>
 File: IMAGES/fond_de_panierancien.png Graphic file (type png)
 <use IMAGES/fond_de_panierancien.png>
 Package luatex.def Info: IMAGES/fond_de_panierancien.png  used on input line 17
@@ -2169,12 +2169,12 @@ Package luatex.def Info: SAAS.png  used on input line 189.
 Missing character: There is no * (U+002A) in font nullfont!
 Missing character: There is no * (U+002A) in font nullfont!
 <./IMAGES/fond_de_panierancien.png>]
-<IMAGES/face_avant_old.png, id=287, 220.57407pt x 414.04688pt>
+<IMAGES/face_avant_old.png, id=310, 220.57407pt x 414.04688pt>
 File: IMAGES/face_avant_old.png Graphic file (type png)
 <use IMAGES/face_avant_old.png>
 Package luatex.def Info: IMAGES/face_avant_old.png  used on input line 192.
 (luatex.def)             Requested size: 132.34544pt x 248.43004pt.
-<IMAGES/liaison_pcb_old.jpg, id=288, 3083.52pt x 4111.36pt>
+<IMAGES/liaison_pcb_old.jpg, id=311, 3083.52pt x 4111.36pt>
 File: IMAGES/liaison_pcb_old.jpg Graphic file (type jpg)
 <use IMAGES/liaison_pcb_old.jpg>
 Package luatex.def Info: IMAGES/liaison_pcb_old.jpg  used on input line 200.
@@ -2292,7 +2292,7 @@ Package luatex.def Info: SAAS.png  used on input line 393.
 Missing character: There is no * (U+002A) in font nullfont!
 ]
 Chapitre 5.
-<IMAGES/fond_de_panier_nouveau.png, id=356, 807.015pt x 185.94469pt>
+<IMAGES/fond_de_panier_nouveau.png, id=379, 807.015pt x 185.94469pt>
 File: IMAGES/fond_de_panier_nouveau.png Graphic file (type png)
 <use IMAGES/fond_de_panier_nouveau.png>
 Package luatex.def Info: IMAGES/fond_de_panier_nouveau.png  used on input line 
@@ -2316,7 +2316,7 @@ Package luatex.def Info: SAAS.png  used on input line 410.
 Missing character: There is no * (U+002A) in font nullfont!
 Missing character: There is no * (U+002A) in font nullfont!
 <./IMAGES/fond_de_panier_nouveau.png>]
-<IMAGES/design sans dot.png, id=367, 744.04375pt x 345.6915pt>
+<IMAGES/design sans dot.png, id=390, 744.04375pt x 345.6915pt>
 File: IMAGES/design sans dot.png Graphic file (type png)
 <use IMAGES/design sans dot.png>
 Package luatex.def Info: IMAGES/design sans dot.png  used on input line 413.
@@ -2335,67 +2335,130 @@ Package luatex.def Info: SAAS.png  used on input line 428.
 (luatex.def)             Requested size: 35.14607pt x 17.57303pt.
  [14<./IMAGES/design sans dot.png>]
 Chapitre 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--436
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--438
+
+ []
+
 File: SAAS.png Graphic file (type png)
 <use SAAS.png>
-Package luatex.def Info: SAAS.png  used on input line 437.
+Package luatex.def Info: SAAS.png  used on input line 441.
 (luatex.def)             Requested size: 35.14607pt x 17.57303pt.
 File: SAAS.png Graphic file (type png)
 <use SAAS.png>
-Package luatex.def Info: SAAS.png  used on input line 437.
+Package luatex.def Info: SAAS.png  used on input line 441.
 (luatex.def)             Requested size: 35.14607pt x 17.57303pt.
 File: SAAS.png Graphic file (type png)
 <use SAAS.png>
-Package luatex.def Info: SAAS.png  used on input line 437.
+Package luatex.def Info: SAAS.png  used on input line 441.
 (luatex.def)             Requested size: 35.14607pt x 17.57303pt.
 [15
 
 
 Missing character: There is no * (U+002A) in font nullfont!
 Missing character: There is no * (U+002A) in font nullfont!
-] 
+]
+Chapitre 7.
+<IMAGES/amp_in.png, id=410, 362.007pt x 217.467pt>
+File: IMAGES/amp_in.png Graphic file (type png)
+<use IMAGES/amp_in.png>
+Package luatex.def Info: IMAGES/amp_in.png  used on input line 449.
+(luatex.def)             Requested size: 253.40317pt x 152.22585pt.
+<IMAGES/phi_in.png, id=411, 362.007pt x 217.467pt>
+File: IMAGES/phi_in.png Graphic file (type png)
+<use IMAGES/phi_in.png>
+Package luatex.def Info: IMAGES/phi_in.png  used on input line 457.
+(luatex.def)             Requested size: 253.40317pt x 152.22585pt.
+<IMAGES/amp_out.png, id=414, 362.007pt x 217.467pt>
+File: IMAGES/amp_out.png Graphic file (type png)
+<use IMAGES/amp_out.png>
+Package luatex.def Info: IMAGES/amp_out.png  used on input line 469.
+(luatex.def)             Requested size: 253.40317pt x 152.22585pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<IMAGES/phi_out.png, id=415, 362.007pt x 217.467pt>
+File: IMAGES/phi_out.png Graphic file (type png)
+<use IMAGES/phi_out.png>
+Package luatex.def Info: IMAGES/phi_out.png  used on input line 477.
+(luatex.def)             Requested size: 253.40317pt x 152.22585pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+File: SAAS.png Graphic file (type png)
+<use SAAS.png>
+Package luatex.def Info: SAAS.png  used on input line 484.
+(luatex.def)             Requested size: 35.14607pt x 17.57303pt.
+File: SAAS.png Graphic file (type png)
+<use SAAS.png>
+Package luatex.def Info: SAAS.png  used on input line 484.
+(luatex.def)             Requested size: 35.14607pt x 17.57303pt.
+File: SAAS.png Graphic file (type png)
+<use SAAS.png>
+Package luatex.def Info: SAAS.png  used on input line 484.
+(luatex.def)             Requested size: 35.14607pt x 17.57303pt.
+[16
+
+
+Missing character: There is no * (U+002A) in font nullfont!
+Missing character: There is no * (U+002A) in font nullfont!
+<./IMAGES/amp_in.png><./IMAGES/phi_in.png>]
+File: SAAS.png Graphic file (type png)
+<use SAAS.png>
+Package luatex.def Info: SAAS.png  used on input line 484.
+(luatex.def)             Requested size: 35.14607pt x 17.57303pt.
+File: SAAS.png Graphic file (type png)
+<use SAAS.png>
+Package luatex.def Info: SAAS.png  used on input line 484.
+(luatex.def)             Requested size: 35.14607pt x 17.57303pt.
+File: SAAS.png Graphic file (type png)
+<use SAAS.png>
+Package luatex.def Info: SAAS.png  used on input line 484.
+(luatex.def)             Requested size: 35.14607pt x 17.57303pt.
+ [17<./IMAGES/amp_out.png><./IMAGES/phi_out.png>] 
 AED: lastpage setting LastPage
 File: SAAS.png Graphic file (type png)
 <use SAAS.png>
-Package luatex.def Info: SAAS.png  used on input line 440.
+Package luatex.def Info: SAAS.png  used on input line 487.
 (luatex.def)             Requested size: 35.14607pt x 17.57303pt.
 File: SAAS.png Graphic file (type png)
 <use SAAS.png>
-Package luatex.def Info: SAAS.png  used on input line 440.
+Package luatex.def Info: SAAS.png  used on input line 487.
 (luatex.def)             Requested size: 35.14607pt x 17.57303pt.
 File: SAAS.png Graphic file (type png)
 <use SAAS.png>
-Package luatex.def Info: SAAS.png  used on input line 440.
+Package luatex.def Info: SAAS.png  used on input line 487.
 (luatex.def)             Requested size: 35.14607pt x 17.57303pt.
-[16
+[18
 
 ] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
-LaTeX Warning: There were undefined references.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2AC65B5F55746768A0AAD1FF98A979EC;5971.
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 08298DF203B0F02F585584BDF4E7E9E6;6563.
 Package logreq Info: Writing requests to 'main.run.xml'.
 
 \openout1 = main.run.xml
 )
 
 Here is how much of LuaTeX's memory you used:
- 72317 strings out of 477803
+ 72421 strings out of 477803
  156259,3417909 words of node,token memory allocated
  1763 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 36 glue, 4 kern, 1 penalty, 2 glyph, 207 attribute,
  160 glue_spec, 31 attribute_list, 3 write, 4 pdf_action nodes
-   avail lists: 1:7,2:22377,3:2950,4:143,5:398,6:107,7:10322,8:98,9:1192,10:15,1
+   avail lists: 1:7,2:22377,3:2950,4:143,5:398,6:116,7:10322,8:98,9:1192,10:15,1
 1:733
- 90645 multiletter control sequences out of 65536+600000
+ 90692 multiletter control sequences out of 65536+600000
  58 fonts using 4497423 bytes
  115i,13n,111p,5177b,1872s stack positions out of 5000i,500n,10000p,200000b,80000s
 <//?/c:/program files/miktex/fonts/opentype/public/lm/lmroman10-italic.otf><//?/
@@ -2413,9 +2476,9 @@ nts/cm/cmbsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx1
 gram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiK
 TeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (17 pages, 5160666 bytes).
+Output written on main.pdf (19 pages, 5377387 bytes).
 
-PDF statistics: 490 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 131072)
- 304 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 541 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 131072)
+ 328 words of extra memory for PDF output out of 10000 (max. 100000000)
 
