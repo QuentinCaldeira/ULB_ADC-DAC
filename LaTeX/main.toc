@@ -23,7 +23,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Connecteur fond de panier}{6}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}La face avant}{7}{section.2.6}%
+\contentsline {section}{\numberline {2.6}La face avant}{6}{section.2.6}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Contraintes de la nouvelle carte}{8}{chapter.3}%
 \defcounter {refsection}{0}\relax 
@@ -45,7 +45,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.3}Protection des sorties analogiques}{9}{subsection.3.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Etudes des nouvelles protections}{10}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Etude des nouvelles protections}{10}{chapter.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Protection des entrées}{10}{section.4.1}%
 \defcounter {refsection}{0}\relax 

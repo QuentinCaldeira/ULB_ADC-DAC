@@ -50,13 +50,12 @@
 
 \chapter{Contexte}
 \thispagestyle{empty}
-La carte a pour objectif d'interfacer une face avant avec une carte d'acquisition. Son but est de protéger la carte de potentielles mauvaises manipulations. Étant donné le coût d'une carte d'acquisition, il est préférable que la carte de protection soit détruite avant. Cependant, l'idéal reste qu'aucun des deux éléments ne soit détruit. On souhaite principalement se protéger des courts-circuits et de tensions trop élevées.
-Une première carte a été réalisée en 1993. Cette carte est fonctionnelle, mais présente quelques défauts qui seront explicités. Cette nouvelle carte a pour objectif de corriger les défauts de l'ancien modèle, de réduire le nombre d'entrées/sorties, et de donner un coup de jeune à la carte.
+La carte a pour objectif d'interfacer une face avant avec une carte d'acquisition. Son but est de protéger la carte de potentielles mauvaises manipulations. Étant donné le coût d'une carte d'acquisition, la carte de protection doit protéger la carte d'acquisition. Dans le pire des cas, il est préférable que ce soit la carte de protection qui soit détruite, plutôt que la carte d'acquisition. L'idéal reste qu'aucun des deux éléments ne soit détruit. On souhaite principalement se protéger des courts-circuits et de tensions trop élevées.Une première carte a été réalisée en 1993. Cette carte est fonctionnelle, mais présente quelques défauts qui seront explicités. Cette nouvelle carte a pour objectif de corriger les défauts de l'ancien modèle, de réduire le nombre d'entrées/sorties, et de donner un coup de jeune à la carte.
 
 
 \chapter{Présentation de l'existant}
 \thispagestyle{empty}
-Cette partie détaillera les cartes précédemment installées dans le calculateur. La carte dispose de 20 entrées et 12 sorties. Il semblerait qu'elle ait été conçue ainsi afin d'utiliser toutes les broches inférieures du connecteur fond de panier. Le connecteur utilisé est un DIN 41612 de 64 broches. Il s'avère qu'au quotidien, seulement 8 entrées et 2 sorties sont utilisées au maximum. La carte mesure 10 cm de largeur et 22 cm de longueur. C'est une taille standard que toutes les cartes insérées dans les racks doivent respecter. Les connecteurs utilisés sur la face avant sont des connecteurs banane, de couleur différente en fonction d'une entrée, d'une sortie ou d'une masse. Il n'y a pas de détrompeur entre les 3 connectiques.
+Cette partie détaillera les cartes précédemment installées dans le calculateur. La carte dispose de 20 entrées et 12 sorties. Il semblerait qu'elle ait été conçue ainsi afin d'utiliser toutes les broches inférieures du connecteur fond de panier. Le connecteur utilisé est un DIN 41612 de 64 broches. Il s'avère qu'au quotidien, seulement 8 entrées et 2 sorties sont utilisées au maximum. La carte mesure 10 cm de largeur et 22 cm de longueur. C'est une taille standard que toutes les cartes insérées dans les racks doivent respecter. Les connecteurs utilisés sur la face avant sont des connecteurs banane, de couleurs différentes en fonction d'une entrée, d'une sortie ou d'une masse. Il n'y a pas de détrompeur entre les 3 connectiques.
 
 \section{Les cartes d'acquisition}
 Les cartes d'acquisition précédemment utilisées étaient des NI PCI 6014 et NI PCI 6024E. Ces cartes sont au format PCI. Les spécifications de cette carte sont synthétisées dans le tableau ci-dessous.
@@ -77,7 +76,7 @@ Les cartes d'acquisition précédemment utilisées étaient des NI PCI 6014 et N
 \end{center}
 
 \section{Alimentation des amplificateurs}
-Comme les amplificateurs utilisés sont alimentés en $\pm$15 V, et que les cartes ont une alimentation par défaut de $\pm$24 V, il a fallu adapter cette tension. Des régulateurs de tensions positifs et négatifs ont étés utilisés. Un 7815CT a été utilisé pour la partie positive et un 7915 pour la partie négative. Des capacités de filtrage ont étés placés en amont et en aval des alimentations, ainsi que des diodes de protections servant à prévenir des inversions de polarité. La mise en place d'un tel circuit est explicité sur la \bsc{Figure} \ref{fig:alim_exist}. Le choix des capacités se fait souvent en fonction de la documentation du constructeur. De plus, des dissipateurs thermiques ont étés placés afin de limiter la chauffe des composants.
+Comme les amplificateurs utilisés sont alimentés en $\pm$15 V, et que les cartes ont une alimentation par défaut de $\pm$24 V, il a fallu adapter cette tension. Des régulateurs de tensions positifs et négatifs ont été utilisés. Un 7815CT a été utilisé pour générer la tension +15 V, et un 7915 pour la tension -15 V. Des capacités de filtrage ont été placés en amont et en aval des alimentations, ainsi que des diodes de protections servant à prévenir des inversions de polarité. La mise en place d'un tel circuit est explicité sur la \bsc{Figure} \ref{fig:alim_exist}. Le choix des capacités se fait souvent en fonction de la documentation du constructeur. De plus, des dissipateurs thermiques ont étés placé afin de limiter la chauffe des régulateurs de tension.
 
 \newpage%%%%%%%%%%%%%%%%%%
 \begin{figure}[!h]
@@ -96,8 +95,8 @@ external pins width=0](C){7815CT};
 \draw (C.s)node[above,font=\tiny]{GND} -- ++(0,-1) node[ground]{};
 
 \draw(C.bpin 2)to[empty diode,invert]++(-3,0)node[left]{+24 V};
-\draw(C.bpin 2)--++(-.5,0)to[C]++(0,-2);
-\draw(C.bpin 5)--++(.5,0)to[C]++(0,-2)--++(-1.9,0)--++(-1.9,0);
+\draw(C.bpin 2)--++(-.5,0)to[C,l_=22pF]++(0,-2);
+\draw(C.bpin 5)--++(.5,0)to[C,l=22pF]++(0,-2)--++(-1.9,0)--++(-1.9,0);
 \draw(C.bpin 5)--++(2,0)node[right]{+15 V};
 
 \draw (0,-4) node[dipchip,
@@ -108,8 +107,8 @@ external pins width=0](C){7915};
 \draw (C.s)node[above,font=\tiny]{GND} -- ++(0,-1) node[ground]{};
 
 \draw(C.bpin 2)to[empty diode]++(-3,0)node[left]{-24 V};
-\draw(C.bpin 2)--++(-.5,0)to[C]++(0,-2);
-\draw(C.bpin 5)--++(.5,0)to[C]++(0,-2)--++(-1.9,0)--++(-1.9,0);
+\draw(C.bpin 2)--++(-.5,0)to[C,l_=22pF]++(0,-2);
+\draw(C.bpin 5)--++(.5,0)to[C,l=22pF]++(0,-2)--++(-1.9,0)--++(-1.9,0);
 \draw(C.bpin 5)--++(2,0)node[right]{-15 V};
 
 \end{circuitikz}
@@ -121,7 +120,7 @@ external pins width=0](C){7915};
 \section{Protection des entrées}
 \subsection{Présentation}
 
-Afin de protéger les entrées, le montage sur la \bsc{Figure} \ref{fig:entree_exist} a été utilisé. Ce montage possède deux diodes Zener en tête-bêche afin d'écrêter la tension à $\pm$10 V. Une résistance de 1 M$\Omega$ est placée en entrée, ainsi qu'en contre-réaction. Une résistance de 1 k$\Omega$ est placée en sortie afin de limiter le courant. Comme la tension de sortie sera de maximum 10 V, le courant devrait être de maximum 10 mA. Le montage est de type \textbf{inverseur}, ce qui veut dire que le gain est d'environ \textbf{-1}. Une entrée à +10 V sera vue comme -10 V par la carte d'acquisition. Ce gain négatif est corrigé de manière informatique par la carte derrière. L'amplificateur opérationnel est monté sur un socket DIP-14, afin qu'il soit remplaçable facilement.
+Afin de protéger les entrées, le montage sur la \bsc{Figure} \ref{fig:entree_exist} a été utilisé. Ce montage possède deux diodes Zener en tête-bêche afin d'écrêter la tension à $\pm$10 V. Une résistance de 1 M$\Omega$ est placée en entrée, ainsi qu'en contre-réaction. Une résistance de 1 k$\Omega$ est placée en sortie afin de limiter le courant. Comme la tension de sortie sera de maximum 10 V, le courant devrait être de maximum 10 mA. Le montage est de type \textbf{inverseur}, ce qui veut dire que le gain est d'environ \textbf{-1}. Une entrée à +10 V sera vue comme -10 V par la carte d'acquisition. Ce gain négatif est corrigé par le logiciel qui récupère les signaux (\bsc{MatLAB} en l'occurence). L'amplificateur opérationnel est monté sur un socket DIP-14, afin qu'il soit remplaçable facilement.
 
 \begin{figure}[!h]
 \centering
@@ -146,7 +145,7 @@ Pour les entrées, il n'y a pas trop de soucis de protection. En injectant 10 V 
 \section{Protection des sorties}
 \subsection{Présentation}
 
-Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sortie_exist} a été utilisé. Ce montage possède un filtre passe-bas du 1$^{er}$ ordre. L'intérêt d'un tel filtre est discutable, car le signal provient de la carte d'acquisition. Un deuxième filtre passe-bas est placé dans la contre-réaction de l'amplificateur opérationnel. En sortie de ce montage, une résistance de 1 k$\Omega$ a été placée. Cette résistance pose problème car de manière générale, dans un circuit, on cherche à avoir une forte impédance d'entrée et une faible impédance de sortie. On cherche cela afin de faciliter les adaptations d'impédances, c'est-à-dire que la majorité des courants circulant dans un circuit n'ont pas d'impact sur l'autre circuit raccordé. Hors, il a été remarqué qu'avec cette résistance, une chute de tension est observée sur certains procédés.
+Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sortie_exist} a été utilisé. Ce montage possède un filtre passe-bas du 1$^{er}$ ordre. L'intérêt d'un tel filtre est discutable, car le signal provient de la carte d'acquisition. Un deuxième filtre passe-bas est placé dans la contre-réaction de l'amplificateur opérationnel. En sortie de ce montage, une résistance de 1 k$\Omega$ a été placée afin de limiter le courant en cas de court-circuits. Cette résistance pose problème car de manière générale, dans un circuit, on cherche à avoir une forte impédance d'entrée et une faible impédance de sortie. On cherche cela afin de faciliter les adaptations d'impédances, c'est-à-dire que la majorité des courants circulant dans un circuit n'ont pas d'impact sur l'autre circuit raccordé. Hors, il a été remarqué qu'avec cette résistance, une chute de tension est observée sur certains procédés.
 
 \begin{figure}[!h]
 \centering
@@ -167,7 +166,7 @@ Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sortie_ex
 \end{figure}
 
 \subsection{Mesures}
-Pour la sortie, des mesures ont d'abord été faites pour estimer la chute de tension. Sur le procédé de chaufferie par exemple, pour une tension de 10 V fournie par la carte NI, nous ne récupérons que 9 V sur le procédé, soit une chute de 1 V pour 2 mA de consommation. La solution actuelle pour palier à ce problème est de passer par un deuxième amplificateur opérationnel qui a rôle de \textbf{buffer}, c'est-à-dire de faire le lien entre deux étages grâce à sa forte impédance d'entrée et sa faible impédance de sortie. Cependant, cette solution n'est pas viable, car le second amplificateur n'est pas protégé. 
+Pour la sortie, des mesures ont d'abord été faites pour estimer la chute de tension. Sur le procédé de régulation de température par exemple, pour une tension de 10 V fournie par la carte NI, nous ne récupérons que 9 V sur le procédé, soit une chute de 1 V pour 2 mA de consommation. La solution actuelle pour palier à ce problème est de passer par un deuxième amplificateur opérationnel qui a rôle de \textbf{buffer}, c'est-à-dire de faire le lien entre deux étages grâce à sa forte impédance d'entrée et sa faible impédance de sortie. Cependant, cette solution n'est pas viable, car la protection du deuxième amplificateur n'est pas forcément dimensionné pour respecter l'intégrité de la carte.
 
 Lors d'un court-circuit à la masse, le courant est de l'ordre d'une vingtaine de mA, ce qui est tolérable. Cependant, lorsqu'on court-circuite aux alimentations, le courant est de $\pm$ 35 mA, qui est le courant maximal que l'amplificateur peut débiter en court-circuit. Dans ces situations, c'est l'amplificateur qui fait la sécurité et plus le reste du circuit, en fonctionnant en dégradé. Cela peut occasionner une chauffe trop importante et une destruction de l'AOp.
 
@@ -206,7 +205,7 @@ Cette face avant dispose de 20 entrées analogiques numérotées en jaune, et 8 
 \chapter{Contraintes de la nouvelle carte}
 \thispagestyle{empty}
 
-Maintenant que l'existant est plus claire, il faut dresser un cahier des charges qui permettra de dimensionner les nouveaux éléments de la carte. Il est à noter que le laboratoire à décider de faire évoluer ses cartes d'acquisitions, abandonnant le format PCI pour le format PCIe. Les nouvelles cartes seront des NI PCIe 6321 et NI PCIe 6323. Il faudra donc dimensionner le circuit pour respecter les contraintes de ces nouvelles cartes.
+Maintenant que l'existant est plus claire, il faut dresser un cahier des charges qui permettra de dimensionner les nouveaux éléments de la carte. Il est à noter que le laboratoire a décidé de faire évoluer ses cartes d'acquisitions, abandonnant le format PCI pour le format PCIe. Les nouvelles cartes seront des NI PCIe 6321 et NI PCIe 6323. Il faudra donc dimensionner le circuit pour respecter les contraintes de ces nouvelles cartes.
 
 \section{Etude des nouvelles cartes d'acquisitions}
 Les nouvelles cartes étant différentes, il faut prêter attention à leurs spécifications. Ces dernières sont synthétisées dans le tableau ci-dessous.
@@ -229,7 +228,7 @@ Les nouvelles cartes étant différentes, il faut prêter attention à leurs sp�
 
 \section{Ajouts par rapport à l'ancienne version}
 \subsection{Réduction du nombre d'E/S}
-Il s'avère que la carte précédente à été surdimensionnée à l'époque. En effet, sur les 20 entrées présentes, seulement huit sont utilisées au maximum simultanément. Il en va de même pour les sorties, seulement deux sont utilisées au maximum simultanément. Une réduction du nombre d'entrée sorties permettra un gain de place sur la carte, mais facilitera aussi l'ajout de nouvelles fonctionnalités. Il est à noté que les nouvelles cartes partagent la même disposition que les anciennes en ce qui concerne les entrées/sorties analogiques. Il n'y aura donc pas de modifications à apporter à ce sujet.
+Il s'avère que la carte précédente a été surdimensionnée à l'époque. En effet, sur les 20 entrées présentes, seulement huit sont utilisées au maximum simultanément. Il en va de même pour les sorties, seulement deux sont utilisées au maximum simultanément. Une réduction du nombre d'entrées/sorties permettra un gain de place sur la carte, mais facilitera aussi l'ajout de nouvelles fonctionnalités. Il est à noté que les nouvelles cartes partagent la même disposition que les anciennes en ce qui concerne les entrées/sorties analogiques. Il n'y aura donc pas de modifications à apporter à ce sujet.
 
 \subsection{PWM}
 Le laboratoire à pour volonté de vouloir ajouter deux sorties PWM par carte, afin de pouvoir piloter des procédés. Il faudra veiller à protéger efficacement cette sortie PWM, comme les sorties analogiques, en cas de mauvais branchement.
@@ -266,7 +265,7 @@ Les sorties seront manipulées par les élèves. Il faut que ces sorties soient 
 \item Avoir une impédance de sortie faible pour permettre une meilleure adaptation d'impédance avec les différentes charges du laboratoire
 \end{itemize}
 
-\chapter{Etudes des nouvelles protections}
+\chapter{Etude des nouvelles protections}
 \thispagestyle{empty}
 \section{Protection des entrées}
 \subsection{Veille technologique}
@@ -274,14 +273,14 @@ Dans un premier temps, il est intéressant de se renseigner sur différentes mé
 
 Une autre solution, en utilisant aussi des composants passifs, est de faire comme un pont de résistance et de condensateurs. Cette solution est démontrée dans cet article \cite{FilipovaPetrakieva2020}. Cette solution permet de protéger le circuit contre des surtensions. Même si c'est intéressant de pouvoir s'en protéger, ce circuit sert principalement à protéger des surtensions momentanées et non continue. De ce fait, il ne semble pas adapter à l'application.
 
-Il a aussi été envisagée d'utiliser un \verb+LT4363+ \cite{LT4363AD}, qui est un circuit intégré de Analog Devices permettant de couper le circuit en cas de surtensions, et dispose d'une limitation de courant. Ce composant aurait pu être utilisé mais il est bien trop onéreux pour l'application. Étant donné qu'environ vingt cartes seront fabriquées, mettre un composant à plus d'une dizaine d'euros n'était pas envisageable. 
+Il a aussi été envisagée d'utiliser un \verb+LT4363+ \cite{LT4363AD}, qui est un circuit intégré de Analog Devices permettant de couper le circuit en cas de surtensions, et dispose d'une limitation de courant. Ce composant aurait pu être utilisé mais il est bien trop onéreux pour l'application. Étant donné qu'environ vingt cartes seront fabriquées, mettre un composant à plus d'une dizaine d'euros par entrée analogique n'était pas envisageable, et sûrement surdimensionné pour l'application.
 
 Si on regarde du côté des protections mises sur les microcontroleurs, ce qui peut s'apparenter à une carte d'acquisition avec des niveaux de tension moindre, les solutions semblent toujours être les mêmes. Le site de Digikey \cite{digikey} montre de nombreuses solutions utilisées au quotidien. La première est une simple résistance qui permet de limiter le courant en entrée. Il faut que cette résistance reste négligeable par rapport à l'impédance d'entrée de la carte, qui est de l'ordre du Gigaohm. Une autre solution est d'utiliser des diodes de \textbf{clamping}, qui permettent d'écrêter la tension avant d'aller à la carte, comme précédemment.
 
-Comme dans l'ancienne carte, des amplificateurs opérationnels peuvent être utilisés pour faire un \textbf{buffer}, permettant une bonne adaptation d'impédance et une sorte de \textbf{fusible} artificiel, qui pourrait séparer les deux parties du circuit s'il est détruit.
+Comme dans l'ancienne carte, des amplificateurs opérationnels peuvent être utilisés pour faire un \textbf{buffer}, permettant une bonne adaptation d'impédance et une sorte de \textbf{fusible} artificiel, qui pourrait séparer les deux parties du circuit s'il est détruit. Le séparation n'est pas sûre à 100$\%$, car on ne sait pas comment le composant se comportera en état dégradé, et qu'elles sont les jonctions qui seront crées. Mais, de manière générale, on peut espérer une isolation entre les deux parties.
 
 \subsection{Solution retenue}
-Afin de protéger les entrées, le montage sur la \bsc{Figure} \ref{fig:entree_new} a été utilisé. Ce montage possède deux diodes Zener en tête-bêche afin d'écrêter la tension à $\pm$10 V. La saturation de l'amplificateur ne suffira pas à écrêter, car elle dépasse $\pm$10 V. Une résistance de 12 k$\Omega$ est placée en entrée afin de limiter le courant circulant dans les diodes. Un condensateur de 1 nF est placé pour faire un filtre passe-bas. Ce condensateur n'est pas obligatoire et sera retiré pour le moment. Le filtre n'a pas pour volonté d'agir comme un \textbf{filtre anti-repliement}, une carte est déjà prévue à cet effet. Ce filtre a été placé pour nettoyer le signal d'entrée. Une résistance de 150 k$\Omega$ est placée en sortie afin de limiter le courant. Comme la tension de sortie sera de maximum 10 V, le courant devrait être de maximum 10 mA. Il n'y aura donc pas d'inversion de tension à corriger. L'amplificateur opérationnel est monté sur un socket DIP-14, afin qu'il soit remplaçable facilement.
+Afin de protéger les entrées, le montage sur la \bsc{Figure} \ref{fig:entree_new} a été utilisé. Ce montage possède deux diodes Zener en tête-bêche afin d'écrêter la tension à $\pm$10 V. La saturation de l'amplificateur ne suffira pas à écrêter, car elle dépasse $\pm$10 V. Une résistance de 12 k$\Omega$ est placée en entrée afin de limiter le courant circulant dans les diodes. Un condensateur de 1 nF est placé pour faire un filtre passe-bas. Ce condensateur n'est pas obligatoire et sera retiré pour le moment. Le filtre n'a pas pour volonté d'agir comme un \textbf{filtre anti-repliement}, une carte est déjà prévue à cet effet. Ce filtre a été placé pour nettoyer le signal d'entrée. Une résistance de 150 k$\Omega$ est placée en sortie afin de limiter le courant. Comme la tension de sortie sera de maximum 10 V, le courant devrait être de maximum 10 mA. Il n'y aura donc pas d'inversion de tension à corriger. L'amplificateur opérationnel est monté sur un socket DIP-14, afin qu'il soit remplaçable facilement. Il n'y a pas vraiment de critères de choix pour l'amplificateur. Etant donné que nous sommes sur un montage de type buffer, avec une application plutôt basse fréquence, n'importe lequel ferait l'affaire. Des TL064CN ont donc étés utilisés, afin d'harmoniser les stocks d'amplificateurs avec les cartes de filtres anti-repliement.
 
 \newpage
 
@@ -311,13 +310,13 @@ Afin de protéger les entrées, le montage sur la \bsc{Figure} \ref{fig:entree_n
 
 \section{Protection des sorties}
 \subsection{Veille technologique}
-Dans un premier temps, il faut se renseigner sur les méthodes existantes permettant de protéger une sortie. On cherche principalement une protection afin d'empêcher les élèves de détruire la carte en faisant des courts-circuits. Une première solution simple serait d'utiliser des détrompeurs, pour que l'élève ne puisse connecter le câble qu'au éléments souhaités. Cependant, cette solution n'est pas envisageable car le laboratoire souhaite conserver les fiches bananes pour les manipulations des élèves.
-Il est à noter que le calculateur dispose déjà d'un circuit de détection des courts-circuits qui émet un signal sonore et/ou lumineux. Il n'arrête cependant pas le système. Pour rappel le problème actuel est que la résistance utilisée crée une chute de potentiel, par problème d'adaptation d'impédance \cite{Gabriel2012}. Une autre solution pourrait être de trouver une valeur de résistance permettant de limiter le courant à la valeur souhaitée tout en minimisant la chute de tension. Cette solution est envisageable mais difficile à mettre en œuvre car chaque procédé à sa propre impédance d'entrée. Comme on cherche à faire une carte indépendante du procédé, c'est plus compliqué.
+Dans un premier temps, il faut se renseigner sur les méthodes existantes permettant de protéger une sortie. On cherche principalement une protection afin d'empêcher les élèves de détruire la carte en faisant des courts-circuits. Une première solution simple serait d'utiliser des détrompeurs, pour que l'élève ne puisse connecter le câble qu'aux éléments souhaités. Cependant, cette solution n'est pas envisageable car le laboratoire souhaite conserver les fiches bananes pour les manipulations des élèves.
+Il est à noter que le calculateur dispose déjà d'un circuit de détection des courts-circuits, pour le bloc d'alimentation uniquement, qui émet un signal sonore et/ou lumineux. Il n'arrête cependant pas le système. Pour rappel le problème actuel est que la résistance utilisée crée une chute de potentiel, par problème d'adaptation d'impédance \cite{Gabriel2012}. Une autre solution pourrait être de trouver une valeur de résistance permettant de limiter le courant à la valeur souhaitée tout en minimisant la chute de tension. Cette solution est envisageable mais difficile à mettre en œuvre car chaque procédé à sa propre impédance d'entrée. Comme on cherche à faire une carte indépendante du procédé, c'est plus compliqué.
 Une autre solution est de limiter le courant que peut sortir l'amplificateur opérationnel par ses alimentations. En limitant le courant entrant par les alimentations, on pourra limiter le courant sortant en court-circuit et donc la chauffe du composant. Ce type de montage est montrer sur la note d'application de Texas Instruments \cite{appnoteti}.
 En tout cas, il est préférable de continuer à utiliser des amplificateurs opérationnel entre la sortie de la carte d'acquisition et les procédés, comme buffer.
 
 \subsection{Solution retenue}
-Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sorties_new} a été utilisé. Afin de contrer le problème de la chute de tension liée à une impédance de sortie trop forte du montage, l'idée a été de brider l'amplificateur sur les alimentations. Comme il est souhaitable que le courant en cas de court-circuit soit le plus petit possible, si on limite le courant sur les alimentations, le courant sera limité en court-circuit. Cette limite doit être calculée pour que le circuit puisse tout de même débiter assez de courant pour les procédés. Une résistance de 2 k$\Omega$ est placée en sortie de l'AOp, en amont de la contre-réaction, afin d'aider à limiter le courant. L'AOp est en montage \textbf{non-inverseur}, ce qui veut dire que le gain est d'environ \textbf{1}. Pour chacune des alimentations, il y a d'abord une résistance de 2 k$\Omega$ qui permet de limiter le courant entrant dans l'amplificateur, une capacité de 10 nF en parallèle afin de filtrer l'alimentation, et une diode Zener de 15 V pour aider à contrer les chutes de tensions. En effet, comme le courant absorber est parfois important, la résistance crée une chute de tension trop importante qui va faire saturer l'amplificateur trop vite, donc une diode Zener a été placée en parallèle pour aider à maintenir 15 V dans ces cas-là. Une capacité de 0.1 $\mu$F a été placée entre l'amplificateur et la masse, conformément à la note d'application de Texas Instrument dont est grandement inspiré ce montage. Cette note sera disponible en Annexe. L'amplificateur sera une fois de plus monté sur un socket DIP-14 afin de pouvoir le remplacer facilement. Il faudra veiller à surdimensionner les résistances en termes de dissipations de puissance, car comme elles brident l'alimentation, elles dissipent beaucoup en chaleur.
+Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sorties_new} a été utilisé. Afin de contrer le problème de la chute de tension liée à une impédance de sortie trop forte du montage, l'idée a été de brider l'amplificateur sur les alimentations. Comme il est souhaitable que le courant en cas de court-circuit soit le plus petit possible, si on limite le courant sur les alimentations, le courant sera limité en court-circuit. Cette limite doit être calculée pour que le circuit puisse tout de même débiter assez de courant pour les procédés. Une résistance de 2 k$\Omega$ est placée en sortie de l'AOp, en amont de la contre-réaction, afin d'aider à limiter le courant. L'AOp est en montage \textbf{non-inverseur}, ce qui veut dire que le gain est d'environ \textbf{1}. Pour chacune des alimentations, il y a d'abord une résistance de 2 k$\Omega$ qui permet de limiter le courant entrant dans l'amplificateur, une capacité de 10 nF en parallèle afin de filtrer l'alimentation, et une diode Zener de 15 V pour aider à contrer les chutes de tensions. En effet, comme le courant absorber est parfois important, la résistance crée une chute de tension trop importante qui va faire saturer l'amplificateur trop vite, donc une diode Zener a été placée en parallèle pour aider à maintenir 15 V dans ces cas-là. Une capacité de 0.1 $\mu$F a été placée entre l'amplificateur et la masse, conformément à la note d'application de Texas Instrument dont est grandement inspiré ce montage. Cette note sera disponible en Annexe. L'amplificateur sera une fois de plus monté sur un socket DIP-14 afin de pouvoir le remplacer facilement. L'amplificateur sera le même que pour la partie entrée, un TL064CN. Il faudra veiller à surdimensionner les résistances en termes de dissipations de puissance, car comme elles brident l'alimentation, elles dissipent beaucoup en chaleur.
 
 \newpage%%%%%%%%
 \begin{figure}[!h]
@@ -349,7 +348,7 @@ Afin de protéger les sorties, le montage sur la \bsc{Figure} \ref{fig:sorties_n
 
 
 \section{Alimentation du circuit}
-Pour alimenter le montage, l'alimentation principale sera celle des racks, c'es-à-dire $\pm$24\~V. Les amplificateurs seront eux alimentés en $\pm$15\~V, à l'aide de deux régulateurs de tensions : le 7815CV et le 7915CV. Le montage sera équivalent à celui de la précédente carte, comme le montre la \bsc{Figure} \ref{fig:alim_new}. Les diodes sont des 1N4001.
+Pour alimenter le montage, l'alimentation principale sera celle des racks, c'est-à-dire $\pm$24\~V. Les amplificateurs seront eux alimentés en $\pm$15\~V, à l'aide de deux régulateurs de tensions : le 7815CV et le 7915CV. Le montage sera équivalent à celui de la précédente carte, comme le montre la \bsc{Figure} \ref{fig:alim_new}. Les diodes sont des 1N4001.
 
 \begin{figure}[!h]
 \centering
